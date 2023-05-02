@@ -3,7 +3,7 @@ action = 0
 API = azapi.AZlyrics('google', accuracy=0.5)
 def fetcher(artist):
     API.artist = artist
-    API.getLyrics(save=True, ext='lrc')
+    API.getLyrics(save=False, ext='lrc')
     global fetchedLyrics
     global musicDetails
     fetchedLyrics =(f"{API.lyrics}\n")
