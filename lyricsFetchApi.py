@@ -1,6 +1,6 @@
 import azapi
 action = 0
-API = azapi.AZlyrics('google', accuracy=0.5)
+API = azapi.AZlyrics('google')
 saveState = False
 def fetcher(title):
     API.title = title
