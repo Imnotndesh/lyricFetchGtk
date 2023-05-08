@@ -1,9 +1,10 @@
 import azapi
 action = 0
 API = azapi.AZlyrics('google', accuracy=0.5)
-def fetcher(artist):
-    API.artist = artist
-    API.getLyrics(save=False, ext='lrc')
+saveState = False
+def fetcher(title):
+    API.title = title
+    API.getLyrics(save= saveState, ext='lrc')
     global fetchedLyrics
     global musicDetails
     fetchedLyrics =(f"{API.lyrics}\n")

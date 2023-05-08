@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkTextBuffer" id="lyricText"/>
+  <object class="GtkApplicationWindow" id="mainWin">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Lyric Fetcher</property>
+    <property name="window-position">center</property>
+    <property name="default-width">320</property>
+    <property name="default-height">200</property>
+    <property name="hide-titlebar-when-maximized">True</property>
+    <signal name="destroy" handler="onDestroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="mainCont">
+        <property name="name">mainCont</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
+        <property name="margin-top">10</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkSearchEntry" id="usrSong">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-start">12</property>
+                <property name="shadow-type">none</property>
+                <property name="primary-icon-name">audio-x-generic</property>
+                <property name="primary-icon-activatable">False</property>
+                <property name="primary-icon-sensitive">False</property>
+                <property name="primary-icon-tooltip-text" translatable="yes">Track name</property>
+                <signal name="activate" handler="on_usrSong_activate" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">1</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="saveToFile">
+                <property name="label" translatable="yes">Save</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="draw-indicator">True</property>
+                <signal name="toggled" handler="on_saveToFile_toggled" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack-type">end</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <child>
+              <object class="GtkTextView" id="lyricsView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-start">5</property>
+                <property name="margin-end">5</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <property name="editable">False</property>
+                <property name="wrap-mode">word</property>
+                <property name="justification">center</property>
+                <property name="cursor-visible">False</property>
+                <property name="buffer">lyricText</property>
+                <property name="accepts-tab">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
