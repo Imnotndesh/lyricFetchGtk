@@ -12,4 +12,10 @@ This is a simple Gtk 3 application to fetch your favourite song lyrics from the 
   - if not preinstalled can be installed following instructions from https://www.python.org
   ### Azapi Api
   - Can be installed into your system following instructions from https://github.com/elmoiv/azapi
+## How to use
+ - Run the main.py file from the terminal and enter a song title into the search bar shown below:
+ ![image](https://github.com/Imnotndesh/lyricFetchGtk/assets/103320083/c54089f9-6941-4542-a43a-0b20713f3f72)
+
+  ###[optionally]
+  -You can enable the save flag to get a .lrc output of your searched lyric.  
 
