@@ -1,7 +1,8 @@
 # LyFetch
 ### A simple lyric fetching tool.
-![image](https://user-images.githubusercontent.com/103320083/236914529-1f05a75b-4507-4a0c-a5c5-05ec3079b366.png)
-![image](https://user-images.githubusercontent.com/103320083/236914730-56afac4c-7494-4a1e-886b-737adfd8a0ef.png)
+![image](https://github.com/Imnotndesh/lyricFetchGtk/assets/103320083/2920b0cc-207b-4a52-8eb3-e715a6da8874)
+![image](https://github.com/Imnotndesh/lyricFetchGtk/assets/103320083/3fb72886-871f-4d5b-b561-fa413b2f3dbd)
+
 
 
 
