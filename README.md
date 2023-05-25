@@ -16,6 +16,8 @@ This is a simple Gtk 3 application to fetch your favourite song lyrics from the 
  - Run the main.py file from the terminal and enter a song title into the search bar shown below:
  ![image](https://github.com/Imnotndesh/lyricFetchGtk/assets/103320083/c54089f9-6941-4542-a43a-0b20713f3f72)
 
-  ###[optionally]
-  -You can enable the save flag to get a .lrc output of your searched lyric.  
+  ### [Optionally]
+  -You can enable the save flag to get a .lrc output of your searched lyric as shown:
+  ![image](https://github.com/Imnotndesh/lyricFetchGtk/assets/103320083/c523110b-549f-4180-be03-fa1a38f2140e)
+
 
