@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.10.3 -->
+<interface>
+  <!-- interface-name lyricsFetchGtk -->
+  <requires lib="gtk" version="4.6"/>
+  <object class="GtkApplicationWindow" id="mainWin">
+    <property name="default-height">340</property>
+    <property name="default-width">480</property>
+    <property name="startup-id">com.imnotndesh.Lyricsfetch</property>
+    <property name="title"> Lyricsfetch</property>
+    <child>
+      <object class="GtkBox" id="mainCont">
+        <property name="margin-bottom">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-start">5</property>
+        <property name="orientation">vertical</property>
+        <property name="vexpand">True</property>
+        <child>
+          <object class="GtkBox" id="titleCont">
+            <property name="valign">start</property>
+            <child>
+              <object class="GtkTextView" id="titlesCont">
+                <property name="accepts-tab">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="editable">False</property>
+                <property name="hexpand">True</property>
+                <property name="justification">center</property>
+                <property name="margin-bottom">10</property>
+                <property name="monospace">True</property>
+                <property name="overwrite">True</property>
+                <property name="valign">center</property>
+                <property name="wrap-mode">word</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="searchCont">
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkSearchEntry" id="usrSong">
+                <property name="halign">center</property>
+                <property name="hexpand">True</property>
+                <property name="hexpand-set">True</property>
+                <property name="tooltip-text">Enter Song Title</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="saveState">
+                <property name="hexpand">True</property>
+                <property name="label">save</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="lyricsContainer">
+            <property name="hexpand">True</property>
+            <property name="margin-top">5</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkTextView" id="lyricsCont">
+                <property name="accepts-tab">False</property>
+                <property name="cursor-visible">False</property>
+                <property name="editable">False</property>
+                <property name="height-request">100</property>
+                <property name="hexpand">True</property>
+                <property name="justification">center</property>
+                <property name="valign">center</property>
+                <property name="vexpand">True</property>
+                <property name="wrap-mode">word</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
