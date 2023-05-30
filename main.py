@@ -48,6 +48,7 @@ class lyricsApp(Adw.Application):
         self.lyricsCont.set_css_classes(['lyricsContainer'])
         usrEntry.set_css_classes(['searchbar'])
         maincont.set_css_classes(['mainContainer'])
+        self.window.set_css_classes(['mainWindow'])
     # Widget Handlers
     def onUsrEntry(self,usrEntry):
 
