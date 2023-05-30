@@ -1,17 +1,20 @@
 import sys
 import gi
 import lyricsFetchApi
+import styling
 
 gi.require_version('Gtk','4.0')
 gi.require_version('Adw','1')
 from gi.repository import Adw,Gtk
 from lyricsFetchApi import fetcher
+from styling import app_resources
 
 
 
 global builder,window
 builder = Gtk.Builder()
-builder.add_from_file("lyricsFetchGtk")
+builder.add_from_file('lyricsFetchGtk')
+app_resources()
 
 
 class lyricsApp(Adw.Application):
@@ -27,13 +30,24 @@ class lyricsApp(Adw.Application):
         saveState = builder.get_object("saveState")
         self.titleCont = builder.get_object("titlesCont")
         self.lyricCont = builder.get_object("lyricsCont")
-
+        
     # Handler connections
         usrEntry.connect('activate',self.onUsrEntry)
         saveState.connect('toggled',self.onSaveStateTrue)
         self.window.set_application(self)
         self.window.present()
 
+    # Styling Prefs
+        maincont = builder.get_object("mainCont")
+        self.titlehead = builder.get_object("titlesCont")
+        searchCont = builder.get_object("searchCont")
+        self.lyricsCont = builder.get_object("lyricsCont")
+
+        self.titlehead.set_css_classes(['titleContainer'])
+        searchCont.set_css_classes(['searchContainer'])
+        self.lyricsCont.set_css_classes(['lyricsContainer'])
+        usrEntry.set_css_classes(['searchbar'])
+        maincont.set_css_classes(['mainContainer'])
     # Widget Handlers
     def onUsrEntry(self,usrEntry):
 
@@ -42,7 +56,7 @@ class lyricsApp(Adw.Application):
 
         usrSong=usrEntry.get_text()
         fetcher(title=usrSong)
-
+        self.lyricsCont.set_css_classes(['afterFetch'])
         titleBuff.set_text(lyricsFetchApi.musicDetails)
         lyricbuff.set_text(lyricsFetchApi.fetchedLyrics)
 
