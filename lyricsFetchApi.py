@@ -1,4 +1,5 @@
 import azapi
+import time
 action = 0
 API = azapi.AZlyrics('google')
 saveState = False
@@ -10,3 +11,4 @@ def fetcher(title):
     fetchedLyrics =(f"{API.lyrics}\n")
     musicDetails = (f"{API.title} by {API.artist}")
     return fetchedLyrics,musicDetails
+    time.sleep(20)

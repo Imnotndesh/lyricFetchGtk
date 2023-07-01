@@ -2,6 +2,7 @@ import sys
 import gi
 import lyricsFetchApi
 import styling
+import threading
 
 gi.require_version('Gtk','4.0')
 gi.require_version('Adw','1')
@@ -13,9 +14,8 @@ from styling import app_resources
 
 global builder,window
 builder = Gtk.Builder()
-builder.add_from_file('lyricsFetchGtk')
+builder.add_from_file('lyricFetchGtk/lyricsFetchGtk')
 app_resources()
-
 
 class lyricsApp(Adw.Application):
     def __init__(self,**kwargs):
@@ -51,11 +51,12 @@ class lyricsApp(Adw.Application):
         self.window.set_css_classes(['mainWindow'])
     # Widget Handlers
     def onUsrEntry(self,usrEntry):
-
+        
         titleBuff = self.titleCont.get_buffer()
         lyricbuff = self.lyricCont.get_buffer()
 
         usrSong=usrEntry.get_text()
+        thread = threading.Thread(target=fetcher,daemon=True,args=(1,)).start()
         fetcher(title=usrSong)
         self.lyricsCont.set_css_classes(['afterFetch'])
         titleBuff.set_text(lyricsFetchApi.musicDetails)
