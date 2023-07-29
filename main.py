@@ -56,7 +56,7 @@ class lyricsApp(Adw.Application):
         lyricbuff = self.lyricCont.get_buffer()
 
         usrSong=usrEntry.get_text()
-        thread = threading.Thread(target=fetcher,daemon=True,args=(1,)).start()
+        thread = threading.Thread(target=fetcher,daemon=False,args=(1,)).start()
         fetcher(title=usrSong)
         self.lyricsCont.set_css_classes(['afterFetch'])
         titleBuff.set_text(lyricsFetchApi.musicDetails)
